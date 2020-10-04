@@ -1,0 +1,95 @@
+DWMG - An interactive map/log parser for EverQuest.
+---------------
+Version History
+---------------
+
+Alpha
+
+Unreleased Alpha versions of DWMG were mainly testing principles and techniques for parsing EQ logs and experimentation with 
+co-ordinate mathematics.
+
+Beta 0.001
+
+Initial Release.
+Working in the most basic form.
+Shows location, but no direction.
+
+Beta 0.002
+
+Direction and speed calculations implemented.
+More maps added!
+
+Beta 0.003
+
+Fixed bug causing location marker to disappear if two identical /loc co-ord sets are parsed (i.e. the character is standing still)
+Added Always on top functionality, so users can interact with EverQuest while still being able to see the map window.
+More maps added!
+
+Beta 0.004
+
+Added map automatic switching on zone and control to disable feature.
+Added window transparency functionality and control so user can see EQ under the map if it is overlaid.
+Added user persistent settings so that all settings are saved, and reloaded on opening program, including:-
+	- Last map that was loaded
+	- Always on top setting
+	- Transparency setting
+	- Last log loaded
+	- Map windows last size and position on screen
+	- Zone auto switching
+Cleaned up code to make it more readable.
+Added code to prevent user from accidentally changing the map with mouse wheel or cursor keys after selecting from the map menu.
+Added map record objects to aid map auto loading and switching.
+Changed the way maps and offsets are named, to aid map record object generation.
+Changed the way scale factor is read so it is now calculated on the fly, making it easier to add new maps.
+Updated the Readme.txt to reflect new changes.
+More maps added!
+
+Beta 0.005
+
+Fixed a bug where player location would be displayed at x = 0, y = 0 at each initial /loc parse.
+Prevented location marker from displaying the location of the player in the previous zone when the map changes.
+Experimented with various server techniques for multiplayer (nothing new added yet).
+Altered the UI layout a little.
+
+Beta 0.006 - 0.008
+
+Unreleased versions with minor bug fixes.
+
+Beta 0.009
+
+Added displaying player marker at edge of the map as a circle instead of arrow (needs improvement (maybe circle and arrow)).
+Added shrinking and enlarging of map window along with scaling the entire maps co-ordinates.
+
+Beta 0.010
+
+Organised main code into regions
+Refactoring of all code to enable easier integration of new features.
+	- Now using objects for everything that were using structures before.
+	- Enforced better ownership of data and methods by all objects.
+	- Moved from text file storage of offset values to SQLite3 database storage for offsets, and the new players database and potentially data for upcoming features.
+Added players database to store the last known location of all character. Offline characters will now appear as a square on the map they were last seen in by the parser.
+Temporarily removed certain maps such as Kelethin, lower levels of dungeons, and other maps that are part of a larger zone until I can 
+implement these better.
+Disabled waypoints until I have them working with the new code.
+Added finding of EverQuest folder in the default windows EQTitanium client install locations (a folder selection box now appears when the folder cannot be found).
+Added switching character logs in your logs folder automatically depending on the latest one written to by EQ, this means you no longer have to select your log your self, 
+once DWMG knows where your EverQuest folder is, provided your logs are on, it will do the rest.
+Added reverse scanning of logs to find the last zone and locs recorded (if any).
+Began work on death waypoint co-ordinate generation using the above reverse scanning feature.
+Added loading initial zone using the above reverse scanning feature (not using this for initial locs due to concerns over accuracy).
+Added switching map and moving player marker on the detection of a zone in the /who command log results, this enables more reliable location information of characters as 
+players can now only move there characters marker from map to map by zoning or issuing a /who (or /) command in EQ.
+Added some basic icons for currently enabled buttons, the UI should now be much easier to use!
+Attempted to add direction marker for edge of map so player can see what way to run to get back on the map, needs much improvement, feature left in for experimental purposes.
+Changed map data output area from list box to read only multi line text box.
+
+-----
+To Do
+-----
+
+There will be a "big map release" where I add a lot of maps! - this will be focusing on p99 content, classic up to and including Velious.
+Coloured waypoints for different characters.
+Added map key to UI for showing which waypoint is for what character.
+Add Multiplayer Support! (Major Re-Write!!)
+Possibly add a way to move player's position relative to the Z axis and map areas that are outside their proper grid co-ordinates.
+(This list will grow!)
