@@ -327,6 +327,7 @@ Module dBaseControl
                 "('Najena', 'Najena.jpg', 'Najena', 'Najena', '250', '94', '373.0', '233.0'), " &
                 "('The Nektulos Forest', 'Map_nektulos.jpg', 'Nektulos Forest', 'Nektulos Forest', '1000', '91', '143.0', '275.0'), " &
                 "('Oasis of Marr', 'Map_oasisofmarr.jpg', 'Oasis of Marr', 'Oasis Of Marr', '1000', '102', '178.0', '281.0'), " &
+                "('Ocean of Tears', 'Ocean_of_Tears.jpg', 'Ocean of Tears', 'Ocean of Tears', '1000', '37', '391.0', '139.0'), " &
                 "('The Overthere', 'Map_overthere.jpg', 'The Overthere', 'Overthere', '1000', '57', '266.0', '300.0'), " &
                 "('Permafrost', 'Zone_permafrost.jpg', 'Permafrost Keep', 'Permafrost Caverns', '100', '37', '187.0', '487.0'), " &
                 "('Qeynos Hills', 'Qeynoshills.jpg', 'Qeynos Hills', 'Qeynos Hills', '1000', '94', '141.0', '526.0'), " &
